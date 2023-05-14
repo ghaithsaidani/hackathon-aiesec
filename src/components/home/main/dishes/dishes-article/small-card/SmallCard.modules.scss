@@ -1,0 +1,17 @@
+@use "../../../../../../assets/scss/abstracts/colors" as *;
+
+.small-card{
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  width: 140px;
+  height: 145px;
+  display: flex;
+  padding: 20px;
+
+  h4{
+    color: $primary;
+  }
+  h6{
+    color: $paragraph-font-color;
+  }
+}

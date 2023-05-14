@@ -1,34 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.scss'
+import {CssBaseline, responsiveFontSizes, ThemeProvider} from "@mui/material";
+import {DarkPalette, LightPalette} from "./theme/requirements/Palette.jsx";
+import {Theme} from "./theme/Theme.jsx";
+import {useSelector} from "react-redux";
+import {Home} from "./components/home/Home.jsx";
+import {isLightState} from "./features/ThemeSlice.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const lightTheme=useSelector(isLightState)
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <ThemeProvider
+    theme={
+      lightTheme
+        ? responsiveFontSizes(Theme(LightPalette))
+        : responsiveFontSizes(Theme(DarkPalette))
+    }
+    >
+      <CssBaseline />
+      <Home/>
+    </ThemeProvider>
   )
 }
 

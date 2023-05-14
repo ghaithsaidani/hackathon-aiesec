@@ -1,0 +1,33 @@
+@use "../../../../assets/scss/abstracts/colors" as *;
+
+#dishes{
+  article:last-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+
+    .description{
+      padding: 0 200px;
+      p{
+        color: $paragraph-font-color;
+        padding-right: 150px;
+        line-height: 2rem;
+      }
+      h5{
+        color: $primary;
+      }
+      h2,p,.experience-cards-list{
+        margin-top: 20px;
+      }
+      .experience-cards-list{
+        list-style: none;
+        display: flex;
+        gap: 40px;
+        padding: 0;
+      }
+    }
+  }
+}

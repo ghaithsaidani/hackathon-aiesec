@@ -1,0 +1,22 @@
+@use "../../../../assets/scss/abstracts/colors" as *;
+
+#hero {
+  article {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    .description {
+      padding:0 100px;
+      p {
+        color: $paragraph-font-color;
+        margin-top: 50px;
+        padding-right: 10%;
+        line-height: 2rem;
+      }
+    }
+  }
+}

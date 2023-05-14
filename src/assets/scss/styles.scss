@@ -1,0 +1,5 @@
+@use "./abstracts/colors" as *;
+@import "variables.modules";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
